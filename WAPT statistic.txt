@@ -1,0 +1,267 @@
+┌──(nina㉿kali-vm)-[~/Downloads]
+└─$ rlwrap nc 10.8.32.1 1234          
+
+.----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------. 
+| .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |
+| |     ______   | || |     ____     | || |  ________    | || |  _________   | || |   ______     | || |  ____  ____  | |
+| |   .' ___  |  | || |   .'    `.   | || | |_   ___ `.  | || | |_   ___  |  | || |  |_   _ \    | || | |_  _||_  _| | |
+| |  / .'   \_|  | || |  /  .--.  \  | || |   | |   `. \ | || |   | |_  \_|  | || |    | |_) |   | || |   \ \  / /   | |
+| |  | |         | || |  | |    | |  | || |   | |    | | | || |   |  _|  _   | || |    |  __'.   | || |    \ \/ /    | |
+| |  \ `.___.'\  | || |  \  `--'  /  | || |  _| |___.' / | || |  _| |___/ |  | || |   _| |__) |  | || |    _|  |_    | |
+| |   `._____.'  | || |   `.____.'   | || | |________.'  | || | |_________|  | || |  |_______/   | || |   |______|   | |
+| |              | || |              | || |              | || |              | || |              | || |              | |
+| '--------------' || '--------------' || '--------------' || '--------------' || '--------------' || '--------------' |
+ '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------' 
+ .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------. 
+| .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |
+| |    __        | || | _____  _____ | || |      __      | || |   ______     | || |  _________   | || |        __    | |
+| |    \ \       | || ||_   _||_   _|| || |     /  \     | || |  |_   __ \   | || | |  _   _  |  | || |       / /    | |
+| |     \ \      | || |  | | /\ | |  | || |    / /\ \    | || |    | |__) |  | || | |_/ | | \_|  | || |      / /     | |
+| |      \ \     | || |  | |/  \| |  | || |   / ____ \   | || |    |  ___/   | || |     | |      | || |     / /      | |
+| |       \ \    | || |  |   /\   |  | || | _/ /    \ \_ | || |   _| |_      | || |    _| |_     | || |    / /       | |
+| |        \_\   | || |  |__/  \__|  | || ||____|  |____|| || |  |_____|     | || |   |_____|    | || |   /_/        | |
+| |              | || |              | || |              | || |              | || |              | || |              | |
+| '--------------' || '--------------' || '--------------' || '--------------' || '--------------' || '--------------' |
+ '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'
+
+10.8.34.33@СWAPT: task
+
+--  --------------------------  -----  ------
+ID  Название                    Баллы  Решено
+1   Passive: Практика №1        25     +
+2   Passive: Практика №2        50     +
+3   Passive: Практика №3        75     +
+4   С соседями надо дружить...  100    +
+5   Active: Практика №1         25     +
+6   Active: Практика №2         25     +
+7   Active: Практика №3         50     +
+8   Старый добрый id=           50     +
+9   Брут жив                    50     +
+10  Active: Практика №4         75     +
+11  Вспомнить все               100    +
+12  Find and Hack               50     +
+13  Easy POST                   50     +
+14  Escape Skulya               75     +
+15  Без знаний SQL никуда...    75     +
+16  Header SQL-Injection        150    +
+17  Обойди с обратной стороны   200    +
+18  Easy XXE                    25     +
+19  Buy the flag                50     +
+20  Login XXE                   75     +
+21  Get some work               100    +
+22  CMD: Практика №1            25     +
+23  CMD: Практика №2            50     +
+24  Kronos return               75     +
+25  Mini Boss                   100    +
+26  FirstSSTI                   25     +
+27  Advanced SSTI               50     +
+28  Coffee or Tea               50     +
+29  Welcome to the BlindWorld   75     +
+30  Trash around                100    +
+31  Easy include                25     +
+33  Load image                  50     +
+32  So easy                     50     +
+34  Hello people                75     +
+35  LevelUpWAFbypass            75     +
+36  KRONOS AI                   100    +
+37  Struts                      25     +
+38  PHP CGI                     25     +
+39  WordPress                   50     +
+40  FTP                         50     +
+41  Wait for load               50     +
+42  Time for Drupal             50     +
+43  Joomla                      75     +
+44  PHPMailer                   100    +
+45  Base Auth                   25     +
+46  SQL Auth                    25     +
+47  Brut Auth                   25     +
+48  Serialize Auth              50     +
+49  Crypto Auth                 75     +
+50  Fast and Furious            100    +
+51  Camera Miss                 25     +
+52  Index Miss                  25     +
+53  BackUp Miss                 75     +
+54  Shadow Challenge            100    +
+55  easy XSS                    25     +
+56  Stored XSS                  25     +
+57  EasyBypassXSS               50     +
+58  Choose your way             50     +
+59  Test for master             75     +
+60  Dirty Laundry               100    +
+61  Fishing mail                0      -
+62  Sudo                        50     +
+63  Cron                        50     +
+64  From user with root         75     +
+--  --------------------------  -----  ------
+
+10.8.34.33@СWAPT: statistic stream
+
+--------------------------  ---------------  ----------------------------------
+### TOP-10
+
+Позиция                     Имя              Баллы
+1                           noskov_623       3850
+2                           anikeev_623      3850
+3                           rusik_623        3850
+4                           aaandr_623       3850
+5                           mikop_623        3850
+6                           rudnits_623      3850
+7                           ivan_kosti_623   3850
+8                           feoktist_623     3850
+9                           95bes_623        3850
+10                          irk_gma_623      3850
+
+
+### Статистика тасков
+
+Имя                         Кол-во решивших  Первая кровь
+Passive: Практика №1        85               anikeev_623 2023-06-02 15:36:10
+Passive: Практика №2        89               andreisham_623 2023-06-02 14:51:50
+Passive: Практика №3        86               anikeev_623 2023-06-02 15:30:40
+С соседями надо дружить...  45               irk_gma_623 2023-06-02 17:18:55
+Active: Практика №1         85               irk_gma_623 2023-06-05 10:48:13
+Active: Практика №2         85               anikeev_623 2023-06-05 10:59:18
+Active: Практика №3         84               anikeev_623 2023-06-05 11:08:40
+Старый добрый id=           85               irk_gma_623 2023-06-05 11:33:44
+Брут жив                    82               irk_gma_623 2023-06-05 11:47:42
+Active: Практика №4         77               anikeev_623 2023-06-05 12:50:35
+Вспомнить все               54               anikeev_623 2023-06-05 16:34:21
+Find and Hack               73               anikeev_623 2023-06-13 06:20:03
+Easy POST                   71               anikeev_623 2023-06-13 06:21:57
+Escape Skulya               67               anikeev_623 2023-06-13 07:36:38
+Без знаний SQL никуда...    47               feoktist_623 2023-06-13 09:50:44
+Header SQL-Injection        32               noskov_623 2023-06-13 12:39:06
+Обойди с обратной стороны   25               anikeev_623 2023-06-13 13:58:19
+Easy XXE                    66               feoktist_623 2023-06-19 10:16:10
+Buy the flag                63               anikeev_623 2023-06-19 10:43:39
+Login XXE                   56               feoktist_623 2023-06-19 10:18:41
+Get some work               36               anikeev_623 2023-06-19 13:27:44
+CMD: Практика №1            65               mustdie_623 2023-06-26 10:55:29
+CMD: Практика №2            62               noskov_623 2023-06-26 11:00:25
+Kronos return               51               noskov_623 2023-06-26 11:28:00
+Mini Boss                   29               feoktist_623 2023-06-26 12:03:40
+FirstSSTI                   59               feoktist_623 2023-06-29 09:29:58
+Advanced SSTI               56               feoktist_623 2023-06-29 09:39:36
+Coffee or Tea               51               anikeev_623 2023-06-29 10:37:08
+Welcome to the BlindWorld   30               anikeev_623 2023-06-29 12:30:58
+Trash around                21               anikeev_623 2023-06-29 14:31:36
+Easy include                50               feoktist_623 2023-07-03 10:43:55
+So easy                     46               feoktist_623 2023-07-03 10:47:38
+Load image                  46               noskov_623 2023-07-03 11:01:35
+Hello people                30               noskov_623 2023-07-03 11:07:02
+LevelUpWAFbypass            19               anikeev_623 2023-07-03 14:00:54
+KRONOS AI                   14               anikeev_623 2023-07-03 17:07:02
+Struts                      45               anikeev_623 2023-07-10 11:59:59
+PHP CGI                     42               anikeev_623 2023-07-10 12:04:00
+WordPress                   40               noskov_623 2023-07-10 12:12:56
+FTP                         41               noskov_623 2023-07-10 12:19:11
+Wait for load               42               feoktist_623 2023-07-10 12:58:37
+Time for Drupal             37               feoktist_623 2023-07-10 12:54:57
+Joomla                      36               feoktist_623 2023-07-10 13:27:34
+PHPMailer                   24               anikeev_623 2023-07-10 15:52:33
+Base Auth                   38               noskov_623 2023-07-13 16:27:40
+SQL Auth                    38               noskov_623 2023-07-13 16:30:30
+Brut Auth                   38               noskov_623 2023-07-13 16:39:10
+Serialize Auth              28               noskov_623 2023-07-13 16:43:41
+Crypto Auth                 30               noskov_623 2023-07-13 16:58:26
+Fast and Furious            19               rudnits_623 2023-07-13 16:54:51
+Camera Miss                 32               ivan_kosti_623 2023-07-17 22:29:18
+Index Miss                  31               ivan_kosti_623 2023-07-17 22:41:35
+BackUp Miss                 25               noskov_623 2023-07-17 22:43:04
+Shadow Challenge            20               noskov_623 2023-07-18 00:35:52
+easy XSS                    28               noskov_623 2023-07-21 15:31:00
+Stored XSS                  27               patunu_623 2023-07-21 16:14:27
+EasyBypassXSS               26               aaandr_623 2023-07-21 18:21:14
+Choose your way             27               feoktist_623 2023-07-21 17:03:58
+Test for master             20               anikeev_623 2023-07-22 03:16:09
+Dirty Laundry               13               anikeev_623 2023-07-22 10:23:08
+Fishing mail                0
+Sudo                        24               noskov_623 2023-07-27 11:07:52
+Cron                        24               noskov_623 2023-07-27 11:15:55
+From user with root         17               noskov_623 2023-07-27 11:24:08
+--------------------------  ---------------  ----------------------------------
+
+10.8.34.33@СWAPT: statistic course
+
+--------------------------  ---------------
+### Статистика тасков
+
+Имя                         Кол-во решивших
+Passive: Практика №2        458
+Passive: Практика №1        453
+С соседями надо дружить...  296
+Passive: Практика №3        446
+Active: Практика №1         436
+Active: Практика №2         429
+Active: Практика №3         419
+Старый добрый id=           422
+Брут жив                    407
+Active: Практика №4         381
+Вспомнить все               261
+Find and Hack               392
+Easy POST                   387
+Escape Skulya               366
+Без знаний SQL никуда...    257
+Header SQL-Injection        210
+Обойди с обратной стороны   163
+Buy the flag                309
+Get some work               180
+Login XXE                   300
+Easy XXE                    361
+CMD: Практика №1            345
+CMD: Практика №2            332
+Kronos return               258
+Mini Boss                   158
+FirstSSTI                   322
+Advanced SSTI               311
+Coffee or Tea               246
+Welcome to the BlindWorld   183
+Trash around                152
+KRONOS AI                   103
+LevelUpWAFbypass            133
+Load image                  287
+So easy                     286
+Easy include                294
+Hello people                180
+Struts                      273
+PHP CGI                     272
+WordPress                   259
+FTP                         262
+Wait for load               264
+Time for Drupal             251
+Joomla                      236
+PHPMailer                   180
+Crypto Auth                 185
+Fast and Furious            129
+Serialize Auth              227
+SQL Auth                    262
+Base Auth                   262
+Brut Auth                   257
+Camera Miss                 252
+Index Miss                  250
+BackUp Miss                 239
+Shadow Challenge            116
+Stored XSS                  234
+Dirty Laundry               83
+Test for master             133
+Choose your way             225
+EasyBypassXSS               225
+easy XSS                    235
+Fishing mail                0
+Sudo                        224
+Cron                        223
+From user with root         136
+
+
+### Top-1 каждого потока
+
+Имя - баллы                 Поток
+
+
+### Сдавшие экзамен
+
+Имя                         Дата
+--------------------------  ---------------
+
+10.8.34.33@СWAPT: 
+

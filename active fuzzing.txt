@@ -1,0 +1,71 @@
+active fuzzing
+
+
+
+find directory (will not find /aaa.php):
+
+dirsearch -u http://10.8.32.1:42791 
+
+dirsearch -u http://10.8.32.1:42791 -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt
+
+ffuf -u http://10.8.32.1:42791/FUZZ -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -fs 626
+
+ffuf -u http://10.8.32.1:42791/FUZZ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -fs 626 
+
+gobuster dir -u http://10.8.32.1:42791 -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt
+
+feroxbuster -u http://10.8.32.1:42791 -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt
+
+
+
+parameters:
+
+?page=main
+
+ffuf -u http://10.8.32.1:42791/?page=FUZZ -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-small.txt -fs 612 
+
+ffuf -u http://10.96.1.37/920734341552493d3bb3370f81ac24d2/?FUZZ=aaa -w /usr/share/seclists/Discovery/Web-Content/api/api-endpoints-res.txt -fs 612 
+
+also the trick was that it works only for  http://10.8.32.1:42791/?id=1  for everything else except 1,2,3,4 it did not show difference in size
+
+
+
+files:
+
+feroxbuster -u http://10.8.32.1:42793/files -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -t 40 --extensions php,txt,doc
+
+ffuf -u http://10.8.32.1:42793/files/FUZZ -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -e .txt,.php,.doc -fs 178
+
+gobuster dir -u http://10.8.32.1:42793/files -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -x php,html --exclude-length 124 
+
+
+id is a number:
+
+wfuzz -u http://10.8.32.1:61004/40845778436153ae58a101027fa63c2d/?page_id=FUZZ -c -z range,5000-50000 -t 50 --hc 404
+
+wfuzz -u http://10.8.32.1:42791/?id=FUZZ -c -z range,450-460 -t 50 --hc 404 --hh 557
+
+wfuzz -u http://10.96.1.78/node/FUZZ -c -z range,1-50000 -t 50 --hc 404 --hh 557
+http://10.96.1.78/node/3
+
+ffuf -u http://10.8.32.1:42791/?id=FUZZ -w /usr/share/seclists/Fuzzing/4-digits-0000-9999.txt -fs 557 
+
+
+password
+
+ffuf -u http://10.8.32.1:42795/ -X POST -d "login=admin&pass=FUZZ&submit=%D0%92%D1%85%D0%BE%D0%B4" -H "Content-Type: application/x-www-form-urlencoded" -w /usr/share/seclists/Passwords/xato-net-10-million-passwords-10000.txt:FUZZ --fs 1074
+
+ffuf -u http://10.8.32.1:42791 -X POST -d "login=FUZZ1&passwd=FUZZ2" -H "Content-Type: application/x-www-form-urlencoded" -w /usr/share/seclists/Usernames/top-usernames-shortlist.txt:FUZZ1 -w /usr/share/seclists/Passwords/xato-net-10-million-passwords-1000.txt:FUZZ2 --fs 482
+
+ffuf -u http://10.96.1.99/97b4ee911ba694d25e628d6bff17cbf8/ -X POST -d "login=FUZZ1&passwd=FUZZ2" -H "Content-Type: application/x-www-form-urlencoded" -w /usr/share/seclists/Usernames/top-usernames-shortlist.txt:FUZZ1 -w /usr/share/seclists/Passwords/xato-net-10-million-passwords-1000.txt:FUZZ2 --fs 482
+
+
+ffuf -u http://10.96.1.233/d164a9f95c74077c83d23ab74cfac522/login.php -X POST -d "login=jessica&passwd=FUZZ" -H "Content-Type: application/x-www-form-urlencoded" -w /usr/share/seclists/Passwords/xato-net-10-million-passwords-10000.txt:FUZZ --fs 1074
+
+
+user in base 64
+
+ffuf -u http://10.8.32.1:42792 -X POST -d "user=FUZZ" -H "Content-Type: application/x-www-form-urlencoded" -w ../names_base64.txt:FUZZ --fs 880
+
+wfuzz -u http://10.8.32.1:42792 -d "user=FUZZ" -c -z file,/usr/share/seclists/Usernames/xato-net-10-million-usernames.txt,base64 -H "Content-Type: application/x-www-form-urlencoded" -t 50 --hw 64
+

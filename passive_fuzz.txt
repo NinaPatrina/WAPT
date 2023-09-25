@@ -1,0 +1,35 @@
+Цель: codeby.net
+
+Задачи:
+1. Определить IP адрес
+2. Определить в какой подсети находится цель
+3. Определить местоположение цели
+
+ping 
+whois -h whois.ripe.net 104.21.28.245  
+
+
+dig codeby.net 
+nslookup codeby.net
+
+
+
+Цель: kodeby.ru
+
+Задачи:
+
+1. На каком сайте было приобретено это доменное имя
+2. Сайт-сосед, Школа с углубленным изучением отдельных предметов
+
+
+2 https://viewdns.info/reverseip/?host=kodeby.ru&t=1
+
+
+task 4
+
+https://suip.biz/ru/?act=hostmap
+
+1. History
+2. reverse ip
+3. Используй viewdns.info и https://suip.biz/ru/?act=hostmap
+

